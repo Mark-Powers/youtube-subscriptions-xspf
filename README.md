@@ -5,6 +5,7 @@ Creates an xspf file to watch youtube videos in your favorite media player.
 ## Dependencies
 requests
 bs4 (beautiful soup)
+lxml
 
 ## Usage
 Download your youtube subscriptions xml file from [here](https://www.youtube.com/subscription_manager).
