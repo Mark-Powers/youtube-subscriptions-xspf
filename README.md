@@ -7,6 +7,9 @@ requests
 bs4 (beautiful soup)
 
 ## Usage
-Download your youtube subscriptions xml file from [here](https://www.youtube.com/subscription_manager).
-Then run youtube-to-xspf.py to generate the playlist file subscriptions.xspf, which can be opened in VLC.
-You can sort by Album to arrange by date uploaded.
+Download your youtube subscriptions xml file from
+[here](https://www.youtube.com/subscription_manager) or put "rss-subs.txt" with
+links one per line of links to youtube xml files [example
+here](https://www.youtube.com/feeds/videos.xml?channel_id=UCQSrdt0-Iu8qVEiJyzhrfdQ).
+Then run youtube-to-xspf.py to generate the playlist file subscriptions.xspf,
+which can be opened in VLC. You can sort by Album to arrange by date uploaded.

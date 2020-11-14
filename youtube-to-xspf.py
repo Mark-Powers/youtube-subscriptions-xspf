@@ -5,11 +5,22 @@ import requests
 from bs4 import BeautifulSoup
 
 subscriptions = []
-with open("subscription_manager.xml") as f:
-	subs = BeautifulSoup(f.read(), "xml")
-	for sub in subs.find_all("outline"):
-		if "xmlUrl" in sub.attrs:
-			subscriptions.append(sub["xmlUrl"])
+
+try:
+	with open("rss-subs.txt") as inputfile:
+		for line in inputfile:
+			subscriptions.append(line)
+except IOError:
+    print("rss-subs.txt not found")
+
+try:
+	with open("subscription_manager.xml") as f:
+		subs = BeautifulSoup(f.read(), "xml")
+		for sub in subs.find_all("outline"):
+			if "xmlUrl" in sub.attrs:
+				subscriptions.append(sub["xmlUrl"])
+except IOError:
+	print("subscription_manager.xml not found")
 
 def get_videos(channel):
 	tracks = []
